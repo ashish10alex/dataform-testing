@@ -1,6 +1,6 @@
 config {
   type: "view",
-  dataset: "intermediate",
+  schema: "intermediate",
   name: "v_users",
   description: "Cleaned version of stackoverflow.users table",
   dependencies: [{
@@ -17,5 +17,5 @@ SELECT
     ROUND(TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), creation_date, DAY) / 365) AS user_tenure
 FROM
     ${ref("users")}
-TABLESAMPLE SYSTEM (10 PERCENT)
+    TABLESAMPLE SYSTEM (10 PERCENT)
 LIMIT 100
