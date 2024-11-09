@@ -15,6 +15,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
     - [Dataform](#dataform)
     - [Google Cloud](#google-cloud-1)
   - [Repository Structure](#repository-structure)
+  - [Nice to Have](#nice-to-have)
   - [License](#license)
   - [Authors](#authors)
 
@@ -82,6 +83,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
 - [Core Reference](https://cloud.google.com/dataform/docs/reference/dataform-core-reference)
 - [CLI Reference](https://cloud.google.com/dataform/docs/reference/dataform-cli-reference)
 - [Stackoverflow Dataform Reference](https://github.com/dataform-co/dataform/tree/main/examples/stackoverflow_reporter)
+- [Dataform Core - VSCode Extension](https://marketplace.visualstudio.com/items?itemName=dataform.dataform)
 
 ### Google Cloud
 - [BigQuery](https://cloud.google.com/bigquery/docs)
@@ -105,6 +107,11 @@ This repository provides a testing ground for Dataform features, including CLI, 
 ├── README.md            // Project description and documentation
 └── workflow_settings.yaml // Dataform workflow settings
 ```
+
+## Nice to Have
+- [Dataform Tools - VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ashishalex.dataform-lsp-vscode)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [SQLFluff - Python Package](https://docs.sqlfluff.com/en/stable/gettingstarted.html)
 
 ## License
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
