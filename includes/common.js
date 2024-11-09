@@ -21,9 +21,32 @@ function validateEmail(email) {
     END`;
 }
 
+function validateAndConvertMobile(mobile) {
+    return `CASE 
+        WHEN REGEXP_CONTAINS(REPLACE(REPLACE(${mobile}, '+', ''), ' ', ''), r'^0?4[0-9]{8}$|^614[0-9]{8}$')
+        THEN '+61' || RIGHT(REPLACE(REPLACE(${mobile}, '+', ''), ' ', ''), 9)
+        ELSE NULL
+    END`;
+}
+
+function formatTimestampSeconds(seconds) {
+    /* 
+    * Handles timestamp seconds with fractional seconds (FLOAT64) and converts to TIMESTAMP_MICROS
+    * If more than 6 decimal places are present, rounds to 6 decimal places before converting to microseconds
+    * Example: 1617235959.123456 -> 1617235959123456 (TIMESTAMP_MICROS)
+    * @param {FLOAT64} seconds - Timestamp seconds with fractional seconds
+    * OR
+    * @param {INT64} seconds - Timestamp seconds
+    * @return Query string to convert timestamp seconds to TIMESTAMP_MICROS
+    */
+    return `TIMESTAMP_MICROS(CAST(SAFE_MULTIPLY(ROUND(SAFE_CAST(${seconds} as FLOAT64), 6), 1000000) AS INT64))`;
+}
+
 
 module.exports = {
     ageBucket,
     createHash,
-    validateEmail
+    validateEmail,
+    validateAndConvertMobile,
+    formatTimestampSeconds
 };
