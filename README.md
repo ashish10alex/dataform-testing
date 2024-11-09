@@ -94,19 +94,20 @@ This repository provides a testing ground for Dataform features, including CLI, 
 ```
 .
 ├── .vscode-dataform-tools  // VSCode Dataform extension tools
-│   └── .sqlfluff        // SQLFluff configuration for Dataform
-├── definitions           // Dataform definitions
-│   ├── 0_sources        // Data sources (raw data)
-│   ├── 1_intermediate   // Intermediate/staging ("silver") tables
-│   ├── 2_outputs        // Output/final ("gold") tables
-│   ├── 3_assertions     // Data quality assertions
-│   ├── 4_extras         // Operations, functions, scripts, etc.
-│   └── 5_schemas        // BigQuery JSON schema files (optional)
-├── includes             // Dataform includes (reusable JS code)
-├── .gitignore           // Files and directories ignored by Git
-├── LICENSE              // Project license
-├── README.md            // Project description and documentation
-└── workflow_settings.yaml // Dataform workflow settings
+│   └── .sqlfluff           // SQLFluff configuration for Dataform
+├── definitions             // Dataform definitions
+│   ├── 0_sources           // Data sources (raw data)
+│   ├── 1_intermediate      // Intermediate/staging ("silver") tables
+│   ├── 2_outputs           // Output/final ("gold") tables
+│   ├── 3_assertions        // Data quality assertions
+│   ├── 4_tests             // Tests (unit, etc.)
+│   ├── 5_extras            // Operations, functions, scripts, etc.
+│   └── 6_schemas           // BigQuery JSON schema files (optional)
+├── includes                // Dataform includes (reusable JS code)
+├── .gitignore              // Files and directories ignored by Git
+├── LICENSE                 // Project license
+├── README.md               // Project description and documentation
+└── workflow_settings.yaml  // Dataform workflow settings
 ```
 
 ## Nice to Have
