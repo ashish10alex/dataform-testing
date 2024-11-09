@@ -1,0 +1,21 @@
+config {
+  type: "view",
+  schema: "intermediate",
+  name: "v_badges",
+  description: "Cleaned version of stackoverflow.badges",
+  dependencies: [{
+    dataset: "stackoverflow",
+    name: "badges"
+  }, ]
+}
+
+
+SELECT
+    id   AS badge_id,
+    name AS badge_name,
+    date AS award_timestamp,
+    user_id
+FROM
+    ${ref("badges")}
+TABLESAMPLE SYSTEM (10 PERCENT)
+LIMIT 100

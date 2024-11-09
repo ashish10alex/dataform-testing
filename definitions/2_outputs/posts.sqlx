@@ -1,0 +1,51 @@
+config {
+  type: "table", // Defined this as a table to show the discrepancy between view and table for dependencies
+  schema: "outputs",
+  name: "all_posts",
+  tags: ["daily"],
+  description: "Combine both questions and answers into a single posts_all table)",
+  dependOnDependencyAssertions: true,
+  dependencies: [{
+      schema: "intermediate",
+      name: "v_answers"
+    },
+    {
+      schema: "intermediate",
+      name: "v_questions"
+    },
+    {
+      name: "a_posts_count",
+      includeDependentAssertions: false
+    }
+  ],
+  columns: {
+    post_id: `A unique identifier for a post`,
+    created_at: `The time the post was created`,
+    type: `The post type: question or answer`,
+    title: `The title of the post`,
+    body: `The content in the body of the post`
+  },
+}
+
+
+SELECT
+    post_id,
+    created_at,
+    type,
+    title,
+    body,
+    owner_user_id,
+    parent_id
+FROM
+    ${ref("v_answers")}
+UNION ALL
+SELECT
+    post_id,
+    created_at,
+    type,
+    title,
+    body,
+    owner_user_id,
+    parent_id
+FROM
+    ${ref("v_questions")}

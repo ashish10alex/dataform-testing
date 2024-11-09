@@ -38,6 +38,18 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.o
+*.d
+
+# Dataform
+.df-credentials.json
+
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -121,6 +133,15 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+
+# MacOS
+.DS_Store
+
+# IDE
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
 
 # yarn v2
 .yarn/cache

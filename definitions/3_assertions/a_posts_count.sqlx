@@ -1,0 +1,13 @@
+config { 
+    type: "assertion"
+}
+
+select 1
+where (
+  select count(*) from ${ref("v_all_posts")}
+) = (
+  select count(*) from ${ref("v_answers")}
+) + (
+  select count(*) from ${ref("v_questions")}
+)
+
