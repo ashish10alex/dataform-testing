@@ -1,6 +1,6 @@
 config {
   type: "view",
-  schema: "intermediate",
+  dataset: "intermediate",
   name: "v_questions",
   description: "Cleaned version of stackoverflow.posts_questions",
   dependencies: [{
@@ -22,5 +22,4 @@ FROM
     ${ref("posts_questions")}
 WHERE
     creation_date >= TIMESTAMP('2019-01-01')
-TABLESAMPLE SYSTEM (10 PERCENT)
 LIMIT 100

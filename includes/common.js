@@ -1,11 +1,11 @@
 function ageBucket(age) {
-    const age_clean = `cast(${age} as int64)`;
-    return `case
-              when ${age_clean} between 0 and 18 then "Under 18"
-              when ${age_clean} between 19 and 35 then "19 to 35"
-              when ${age_clean} between 36 and 50 then "36 to 50"
-              else "50+"
-            end`;
+    const age_clean = `CAST(${age} as INT64)`;
+    return `CASE
+              WHEN ${age_clean} BETWEEN 0 AND 18 THEN "Under 18"
+              WHEN ${age_clean} BETWEEN 19 AND 35 THEN "19 to 35"
+              WHEN ${age_clean} BETWEEN 36 AND 50 THEN "36 to 50"
+              ELSE "50+"
+            END`;
 }
 
 function createHash(field) {

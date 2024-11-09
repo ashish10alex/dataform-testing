@@ -1,6 +1,6 @@
 config {
   type: "view",
-  schema: "intermediate",
+  dataset: "intermediate",
   name: "v_users",
   description: "Cleaned version of stackoverflow.users table",
   dependencies: [{

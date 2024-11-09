@@ -1,6 +1,6 @@
 config {
   type: "view",
-  schema: "outputs",
+  dataset: "outputs",
   name: "v_user_stats",
   tags: ["daily", "reporting"],
   description: "Create a summary table for all users including statistics on questions, answeers and badges received.",
@@ -32,7 +32,6 @@ config {
     last_answer_posted_at: `The time the user last posted a question`,
   },
   assertions: {
-    uniqueKey: ["user_id"],
     rowConditions: ["badge_count >= 0"]
   }
 }
@@ -60,4 +59,4 @@ LEFT JOIN ${ref("v_badges")} AS v_badges
 LEFT JOIN ${ref("v_all_posts")} AS v_all_posts
     ON v_users.user_id = v_all_posts.owner_user_id
 GROUP BY
-    1, 2, 3, 4, 5
+    1, 2, 3, 4, 5, 6

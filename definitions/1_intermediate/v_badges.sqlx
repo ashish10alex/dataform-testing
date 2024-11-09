@@ -1,6 +1,6 @@
 config {
   type: "view",
-  schema: "intermediate",
+  dataset: "intermediate",
   name: "v_badges",
   description: "Cleaned version of stackoverflow.badges",
   dependencies: [{
@@ -18,4 +18,5 @@ SELECT
 FROM
     ${ref("badges")}
 TABLESAMPLE SYSTEM (10 PERCENT)
+-- Where clause must be 'after' the TABLESAMPLE clause in BigQuery SQL
 LIMIT 100
