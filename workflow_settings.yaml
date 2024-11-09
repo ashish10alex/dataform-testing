@@ -1,7 +1,5 @@
 dataformCoreVersion: 3.0.8
-defaultProject: benjaminwestern-test-dataform
-defaultLocation: US
+defaultProject: drawingfire-b72a8
+defaultLocation: EU
 defaultDataset: dataform
 defaultAssertionDataset: assertions
-vars:
-  INPUT_BUCKET_1: "input-bucket-1-benjaminwestern-test-dataform"

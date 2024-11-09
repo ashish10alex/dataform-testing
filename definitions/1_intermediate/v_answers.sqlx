@@ -11,15 +11,15 @@ config {
 
 
 SELECT
-    id                        AS post_id,
-    creation_date             AS created_at,
-    'answer'                  AS type,
-    title,
-    body,
-    owner_user_id,
-    CAST(parent_id AS STRING) AS parent_id
+  ID                          AS POST_ID
+  , CREATION_DATE             AS CREATED_AT
+  , 'answer'                  AS TYPE
+  , TITLE
+  , BODY
+  , OWNER_USER_ID
+  , CAST(PARENT_ID AS STRING) AS PARENT_ID
 FROM
-    ${ref("posts_answers")}
+  ${ref("posts_answers")}
 WHERE
-    creation_date >= TIMESTAMP('2019-01-01')
+  CREATION_DATE >= TIMESTAMP('2019-01-01')
 LIMIT 100

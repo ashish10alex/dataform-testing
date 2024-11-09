@@ -20,7 +20,7 @@ allow_scalar = False
 [sqlfluff:indentation]
 # See https://docs.sqlfluff.com/en/stable/layout.html#configuring-indent-locations
 indent_unit = space
-tab_space_size = 4
+tab_space_size = 2
 indented_joins = False
 indented_ctes = False
 indented_using_on = True
@@ -38,7 +38,7 @@ skip_indentation_in = script_content
 # comments moved _after_, this configuration setting can be set to "after".
 trailing_comments = before
 # To exclude comment lines from indentation entirely set this to "True".
-ignore_comment_lines = True
+ignore_comment_lines = False
 
 [sqlfluff:layout:type:where_clause]
 line_position = alone:strict
@@ -69,8 +69,8 @@ extended_capitalisation_policy = upper
 
 [sqlfluff:rules:capitalisation.identifiers]
 # Unquoted identifiers
-; extended_capitalisation_policy = upper
-; unquoted_identifiers_policy=all
+extended_capitalisation_policy = upper
+unquoted_identifiers_policy=all
 
 [sqlfluff:rules:capitalisation.functions]
 # Function names
@@ -95,10 +95,10 @@ aliasing = explicit
 
 [sqlfluff:rules:layout.commas]
 # Leading or trailing commas
-line_position = trailing
+line_position = leading
 
 [sqlfluff:layout:type:comma]
-line_position = trailing
+line_position = leading
 
 
 [sqlfluff:rules:convention.select_trailing_comma]
