@@ -1,6 +1,6 @@
 config {
     type: "operations",
-    dataset: "extra",
+    dataset: "extras",
     name: "o_process_content",
     description: "Process content from posts_questions and posts_answers to create a new table with the content of the posts and the user that created it",
     hasOutput: true,

@@ -1,0 +1,18 @@
+config {
+    type: "view",
+    schema: "intermediate",
+    name: "v_external_sample",
+    dependencies: [
+        {
+            dataset: "extras",
+            name: "o_external_sample"
+        }
+    ]
+}
+
+SELECT
+    BugID as bug_id,
+    Severity as severity,
+    Component as component,
+    Description as description
+FROM ${ref("o_external_sample")}

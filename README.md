@@ -10,6 +10,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - [Requirements](#requirements)
     - [Google Cloud](#google-cloud)
     - [Development Environment](#development-environment)
+    - [Seed Sample Data (Optional - For Testing Purposes)](#seed-sample-data-optional---for-testing-purposes)
   - [Important Notes](#important-notes)
   - [References](#references)
     - [Dataform](#dataform)
@@ -71,8 +72,17 @@ This repository provides a testing ground for Dataform features, including CLI, 
 - Compile your dataform project:
   - `dataform compile` (This will compile your dataform project, if there are no errors, you are good to go)
 
+### Seed Sample Data (Optional - For Testing Purposes)
+- Create a Google Cloud Storage Bucket - [Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets) (This is where the sample data will be stored)
+- Navigate to the root of the repository
+- Execute `./scripts/seed_sample_data.sh` to seed sample data into a Google Cloud Storage Bucket you created
+- Provice your Google Cloud Storage Bucket name when prompted (i.e `<BUCKET_NAME>` no need to include `gs://`)
+- The script will seed sample data into your Google Cloud Storage Bucket
+- Update the `workflow_settings.yaml` file with the Google Cloud Storage Bucket name you created to the `INPUT_BUCKET_2` variable
+
 ## Important Notes
 - *The public dataset `bigquery-public-data.stackoverflow` is used in this repository. You will need to set your region to `US` to access this dataset in both the `workflow_settings.yaml` and the `.df-credentials.json` file.*
+- *If your default region is set to `US`, please ensure your Google Cloud Storage Bucket reflects this*
 
 ## References
 ### Dataform
@@ -93,6 +103,8 @@ This repository provides a testing ground for Dataform features, including CLI, 
 ## Repository Structure
 ```
 .
+├── .vscode                 // VSCode window settings (optional)
+├── .github                 // Github Actions workflows
 ├── .vscode-dataform-tools  // VSCode Dataform extension tools
 │   └── .sqlfluff           // SQLFluff configuration for Dataform
 ├── definitions             // Dataform definitions
@@ -104,6 +116,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
 │   ├── 5_extras            // Operations, functions, scripts, etc.
 │   └── 6_schemas           // BigQuery JSON schema files (optional)
 ├── includes                // Dataform includes (reusable JS code)
+├── scripts                 // Shell scripts (e.g., seeding sample data)
 ├── .gitignore              // Files and directories ignored by Git
 ├── LICENSE                 // Project license
 ├── README.md               // Project description and documentation

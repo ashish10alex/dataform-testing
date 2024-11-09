@@ -4,4 +4,6 @@ defaultLocation: US
 defaultDataset: dataform
 defaultAssertionDataset: assertions
 vars:
-  INPUT_BUCKET_1: "input-bucket-1-benjaminwestern-test-dataform"
+  INPUT_BUCKET_1: input-bucket-1-benjaminwestern-test-dataform # ASE1 Bucket
+  INPUT_BUCKET_2: input-bucket-2-benjaminwestern-test-dataform # US bucket
+  TEST_DATASET: test_dataset
