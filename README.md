@@ -9,6 +9,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - [Table of Contents](#table-of-contents)
   - [Requirements](#requirements)
     - [Google Cloud](#google-cloud)
+    - [Important Note](#important-note)
     - [Development Environment](#development-environment)
   - [References](#references)
     - [Dataform](#dataform)
@@ -35,6 +36,9 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - `storage-api.googleapis.com`
   - `storage.googleapis.com`
 - Access Public Dataset [stackoverflow](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=stackoverflow&page=dataset)
+
+### Important Note
+- The public dataset `bigquery-public-data.stackoverflow` is used in this repository. You will need to set your region to `US` to access this dataset in both the `workflow_settings.yaml` and the `.df-credentials.json` file.
 
 ### Development Environment
 - Install [Python](https://www.python.org/downloads/) (v3.10 or higher)
