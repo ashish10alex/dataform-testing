@@ -81,7 +81,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
 - Create a Google Cloud Storage Bucket - [Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets) (This is where the sample data will be stored)
 - Navigate to the root of the repository
 - Execute `./scripts/seed_sample_data.sh` to seed sample data into a Google Cloud Storage Bucket you created
-- Provice your Google Cloud Storage Bucket name when prompted (i.e `<BUCKET_NAME>` no need to include `gs://`)
+- Provide your Google Cloud Storage Bucket name when prompted (i.e `<BUCKET_NAME>` no need to include `gs://`)
 - The script will seed sample data into your Google Cloud Storage Bucket
 - Update the `workflow_settings.yaml` file with the Google Cloud Storage Bucket name you created to the `INPUT_BUCKET_2` variable
 
