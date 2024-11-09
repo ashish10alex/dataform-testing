@@ -9,8 +9,8 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - [Table of Contents](#table-of-contents)
   - [Requirements](#requirements)
     - [Google Cloud](#google-cloud)
-    - [Important Note](#important-note)
     - [Development Environment](#development-environment)
+  - [Important Notes](#important-notes)
   - [References](#references)
     - [Dataform](#dataform)
     - [Google Cloud](#google-cloud-1)
@@ -21,8 +21,10 @@ This repository provides a testing ground for Dataform features, including CLI, 
 
 ## Requirements
 ### Google Cloud
-- Create a Google Cloud Project
-- Enable the following APIs (they should be enabled by default, but double check):
+- Navigate to the [Google Cloud Console](https://console.cloud.google.com/)
+- Create a Google Cloud Project - [Create a Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+  - Enable billing for your project - [Enable Billing](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_new_project)
+- Enable the following APIs (they should be enabled by default, but double check) - [Enable APIs](https://cloud.google.com/apis/docs/getting-started)
   - `analyticshub.googleapis.com`
   - `bigquery.googleapis.com`
   - `bigqueryconnection.googleapis.com`
@@ -36,10 +38,6 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - `storage-component.googleapis.com`
   - `storage-api.googleapis.com`
   - `storage.googleapis.com`
-- Access Public Dataset [stackoverflow](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=stackoverflow&page=dataset)
-
-### Important Note
-- The public dataset `bigquery-public-data.stackoverflow` is used in this repository. You will need to set your region to `US` to access this dataset in both the `workflow_settings.yaml` and the `.df-credentials.json` file.
 
 ### Development Environment
 - Install [Python](https://www.python.org/downloads/) (v3.10 or higher)
@@ -72,6 +70,9 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - `dataform install` (This will install the necessary dependencies for your dataform project)
 - Compile your dataform project:
   - `dataform compile` (This will compile your dataform project, if there are no errors, you are good to go)
+
+## Important Notes
+- *The public dataset `bigquery-public-data.stackoverflow` is used in this repository. You will need to set your region to `US` to access this dataset in both the `workflow_settings.yaml` and the `.df-credentials.json` file.*
 
 ## References
 ### Dataform
