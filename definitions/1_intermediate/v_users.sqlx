@@ -11,11 +11,11 @@ config {
 
 
 SELECT
-    id                                                                   AS user_id,
-    age,
-    creation_date,
-    ROUND(TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), creation_date, DAY) / 365) AS user_tenure
+  ID                                                                     AS USER_ID
+  , AGE
+  , REATION_DATE
+  , ROUND(TIMESTAMP_DIFF(CURRENT_TIMESTAMP(), CREATION_DATE, DAY) / 365) AS USER_TENURE
 FROM
-    ${ref("users")}
-    TABLESAMPLE SYSTEM (10 PERCENT)
+  ${ref("users")}
+  TABLESAMPLE SYSTEM (10 PERCENT)
 LIMIT 100

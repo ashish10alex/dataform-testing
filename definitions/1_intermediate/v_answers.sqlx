@@ -18,6 +18,7 @@ SELECT
   , BODY
   , OWNER_USER_ID
   , CAST(PARENT_ID AS STRING) AS PARENT_ID
+
 FROM
   ${ref("posts_answers")}
 WHERE
