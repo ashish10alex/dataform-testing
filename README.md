@@ -1,10 +1,10 @@
-# Dataform Testing Ground Repository
+# Dataform Testing Ground
 
 ## Description
 This repository provides a testing ground for Dataform features, including CLI, Core, BigQuery integration, and SQLFluff integration. It requires a Google Cloud project with several APIs enabled (BigQuery, Dataform, etc.) and access to the public Stack Overflow dataset. The development environment setup involves Python, Node.js, the Google Cloud SDK, and the Dataform CLI. Detailed instructions for authentication, project setup, and compilation are included. The README also provides a comprehensive list of references to Dataform and Google Cloud documentation.
 
 ## Table of Contents
-- [Dataform Testing Ground Repository](#dataform-testing-ground-repository)
+- [Dataform Testing Ground](#dataform-testing-ground)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Requirements](#requirements)
