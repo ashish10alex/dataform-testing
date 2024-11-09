@@ -1,13 +1,13 @@
 config {
   type: "view",
-  dataset: "outputs", // love how a view needs schema instead of dataset - SO MUCH CONSISTENCY
+  dataset: "outputs", // view needs dataset instead of schema
   name: "v_all_posts",
   tags: ["daily"],
   description: "Combine both questions and answers into a single posts_all table",
   dependencies: [{
       dataset: "intermediate",
       name: "v_answers"
-    }, // love how a view needs dataset instead of schema - SO MUCH CONSISTENCY
+    }, // view needs dataset instead of schema
     {
       dataset: "intermediate",
       name: "v_questions"
@@ -21,6 +21,7 @@ config {
     body: `The content in the body of the post`
   },
   assertions: {
+    uniqueKey: ["post_id"],
     nonNull: ["post_id", "created_at"]
   },
   disabled: false

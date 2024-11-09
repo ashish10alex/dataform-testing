@@ -27,7 +27,8 @@ config {
     body: `The content in the body of the post`
   },
   assertions: {
-    uniqueKey: ["post_id"], // This breaks the dataform run when placed on a `view`
+    uniqueKey: ["post_id"],
+    nonNull: ["post_id", "created_at"]
   }
 }
 

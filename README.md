@@ -45,7 +45,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
 - Install [Python](https://www.python.org/downloads/) (v3.10 or higher)
 - Install [Node.js](https://nodejs.org/en/download/) (v20 or higher)
 - Install [Google Cloud SDK](https://cloud.google.com/sdk/docs)
-- Install [Dataform CLI](https://cloud.google.com/dataform/docs/use-dataform-cli) (v3.0 or higher, it is recommended to install it globally)
+- Install [Dataform CLI](https://cloud.google.com/dataform/docs/use-dataform-cli) (v3.0.8 or higher, it is recommended to install it globally)
 - Authenticate with Google Cloud SDK using the following commands:
   - `gcloud auth login` (This will open a browser window to authenticate with your Google Account)
   - `gcloud config set project <PROJECT_ID>` (replace `<PROJECT_ID>` with your Google Cloud Project ID you created earlier)
