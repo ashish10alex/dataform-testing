@@ -42,7 +42,7 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("v_answers")}
+    ${ref("v_questions")}
 UNION ALL
 SELECT
     post_id,
@@ -53,4 +53,4 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("v_questions")}
+    ${ref("v_answers")}
