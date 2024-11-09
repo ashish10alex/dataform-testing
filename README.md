@@ -67,6 +67,11 @@ This repository provides a testing ground for Dataform features, including CLI, 
 - Clone your dataform repository
 - Navigate to your dataform repository
   - `cd <REPOSITORY_PATH>`
+- Update your `workflow_settings.yaml` file with the appropriate settings for your project (Mandatory changes):
+  - Update the `defaultProject` variable with your created Google Cloud Project ID
+  - Update the `defaultLocation` variable with your region (i.e. `US`)
+  - Update the `INPUT_BUCKET_1` variable with your Google Cloud Storage Bucket name (i.e. `gs://<BUCKET_NAME>`)
+  - Update the `INPUT_BUCKET_2` variable with your Google Cloud Storage Bucket name (i.e. `gs://<BUCKET_NAME>`) (Required for seeding sample data)
 - Install dataform dependencies:
   - `dataform install` (This will install the necessary dependencies for your dataform project)
 - Compile your dataform project:

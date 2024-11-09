@@ -12,6 +12,7 @@ config {
 
 -- This view parses the JSON data from the o_split_sample operation
 -- Then using LAX functions to handle NULL values and type casting to ensure the data is in the correct format
+-- This way you only need to change the query below if the schema of the JSON changes in the future
 WITH parsed as (
     SELECT PARSE_JSON(data) as json_data FROM ${ref("o_split_sample")}
 )
