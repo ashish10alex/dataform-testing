@@ -1,0 +1,24 @@
+actions:
+  - view:
+      filename: 0_sources/raw_sql/example.sql
+      name: example_view
+      dataset: sources
+      description: This is a test view
+      dependencyTargets:
+        - name: inline_js
+  - table:
+      filename: 0_sources/raw_sql/example.sql
+      name: example_table
+      dataset: sources
+      description: This is a test table
+      dependencyTargets:
+        - name: inline_js
+  - notebook:
+      name: example_notebook
+      location: US
+      project: benjaminwestern-test-dataform
+      dependencyTargets:
+        - name: inline_js
+      filename: 0_sources/notebook/sample.ipynb
+      disabled: false
+      description: This is a test notebook

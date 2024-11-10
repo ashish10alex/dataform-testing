@@ -158,7 +158,6 @@ Below is a list of items that I plan to implement in the future to provide a mor
 - [ ] Add `actions.yaml` for Dataform workflows
   - [ ] Add `jupyter notebook` action
   - [ ] Add `sql` file action
-- [ ] Add example for `inline JS` in a file JS `{}` - without needing to add to `common.js`
 - [ ] Add more BigQuery Config Examples (i.e. `partitionBy`, `clusterBy`, `expirationTime`, `labels`, `tags`, `policyTags`, etc.)
 - [ ] Add example for `JS` implementation of `.sqlx` action types
   - [ ] `declare`
