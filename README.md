@@ -17,7 +17,8 @@ This repository provides a testing ground for Dataform features, including CLI, 
     - [Dataform](#dataform)
     - [Google Cloud](#google-cloud-1)
   - [Repository Structure](#repository-structure)
-  - [Nice to Have](#nice-to-have)
+  - [Supporting Repositories](#supporting-repositories)
+  - [Developer Enhancement Tools](#developer-enhancement-tools)
   - [License](#license)
   - [Authors](#authors)
   - [TODO](#todo)
@@ -136,11 +137,15 @@ This repository provides a testing ground for Dataform features, including CLI, 
 └── workflow_settings.yaml  // Dataform workflow settings
 ```
 
-## Nice to Have
+## Supporting Repositories
+- [Dataform Tooling](https://github.com/benjaminwestern/dataform-tooling) - A collection of tools and utilities for integrating Dataform into your new or existing environments
+- [Dataform Terraform](https://github.com/benjaminwestern/dataform-terraform) - An example Terraform Module for deploying Dataform projects to Google Cloud Platform
+
+## Developer Enhancement Tools
 The following tools are recommended for improved code quality, debugging and provide additional features for an enhanced development experience:
-- [Dataform Tools - VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ashishalex.dataform-lsp-vscode)
-- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-- [SQLFluff - Python Package](https://docs.sqlfluff.com/en/stable/gettingstarted.html)
+- [Dataform Tools - VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ashishalex.dataform-lsp-vscode) - Provides syntax highlighting, code completion, and linting for Dataform files
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - Highlights inline errors and warnings in your code
+- [SQLFluff - Python Package](https://docs.sqlfluff.com/en/stable/gettingstarted.html) - Linting and formatting for SQL files
 
 ## License
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
