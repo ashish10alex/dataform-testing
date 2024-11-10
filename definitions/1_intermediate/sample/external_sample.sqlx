@@ -1,11 +1,11 @@
 config {
     type: "view",
-    schema: "intermediate",
-    name: "v_external_sample",
+    dataset: "intermediate",
+    name: "external_sample",
     dependencies: [
         {
-            dataset: "extras",
-            name: "o_external_sample"
+            dataset: "sources",
+            name: "external_sample"
         }
     ]
 }
@@ -15,4 +15,5 @@ SELECT
     Severity as severity,
     Component as component,
     Description as description
-FROM ${ref("o_external_sample")}
+FROM 
+    ${ref({schema: "sources", name: "external_sample"})}

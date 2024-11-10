@@ -6,7 +6,7 @@ config {
   description: "Cleaned version of stackoverflow.users table",
   dependencies: [{
     dataset: "intermediate",
-    name: "v_users"
+    name: "users"
   }],
   bigquery: {
     partitionBy: "DATE(creation_date)",
@@ -40,5 +40,5 @@ SELECT
     creation_date,
     user_tenure
 FROM
-    ${ref("v_users")}
+    ${ref({schema: "intermediate", name: "users"})}
     ${ when(incremental(), `WHERE creation_date > (SELECT max(creation_date) FROM ${self()})`) }

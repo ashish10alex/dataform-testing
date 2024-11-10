@@ -10,6 +10,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - [Requirements](#requirements)
     - [Google Cloud](#google-cloud)
     - [Development Environment](#development-environment)
+    - [Dataform Project Setup](#dataform-project-setup)
     - [Seed Sample Data (Optional - For Testing Purposes)](#seed-sample-data-optional---for-testing-purposes)
   - [Important Notes](#important-notes)
   - [References](#references)
@@ -19,13 +20,14 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - [Nice to Have](#nice-to-have)
   - [License](#license)
   - [Authors](#authors)
+  - [TODO](#todo)
 
 ## Requirements
 ### Google Cloud
-- Navigate to the [Google Cloud Console](https://console.cloud.google.com/)
-- Create a Google Cloud Project - [Create a Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-  - Enable billing for your project - [Enable Billing](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_new_project)
-- Enable the following APIs (they should be enabled by default, but double check) - [Enable APIs](https://cloud.google.com/apis/docs/getting-started)
+1. Navigate to the [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a Google Cloud Project - [Create a Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+   - Enable billing for your project - [Enable Billing](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_new_project)
+3. Enable the following APIs (they should be enabled by default, but double check) - [Enable APIs](https://cloud.google.com/apis/docs/getting-started)
   - `analyticshub.googleapis.com`
   - `bigquery.googleapis.com`
   - `bigqueryconnection.googleapis.com`
@@ -40,42 +42,48 @@ This repository provides a testing ground for Dataform features, including CLI, 
   - `storage-api.googleapis.com`
   - `storage.googleapis.com`
 
+---
+
 ### Development Environment
-- Install [Python](https://www.python.org/downloads/) (v3.10 or higher)
-- Install [Node.js](https://nodejs.org/en/download/) (v20 or higher)
-- Install [Google Cloud SDK](https://cloud.google.com/sdk/docs)
-- Install [Dataform CLI](https://cloud.google.com/dataform/docs/use-dataform-cli) (v3.0.8 or higher, it is recommended to install it globally)
-- Authenticate with Google Cloud SDK using the following commands:
-  - `gcloud auth login` (This will open a browser window to authenticate with your Google Account)
-  - `gcloud config set project <PROJECT_ID>` (replace `<PROJECT_ID>` with your Google Cloud Project ID you created earlier)
-  - `gcloud auth application-default login` (This sets up the application default credentials for your project)
-  - `gcloud auth application-default set-quota-project <PROJECT_ID>` (This sets the quota project for your project)
-- Setup dataform authentication:
-  - `dataform init-creds`
-    - You will then be prompted to select your region, 1 for US, 2 for EU or 3 for Other, select the appropriate region
+1. Install [Python](https://www.python.org/downloads/) (v3.10 or higher)
+2. Install [Node.js](https://nodejs.org/en/download/) (v20 or higher)
+3. Install [Google Cloud SDK](https://cloud.google.com/sdk/docs)
+4. Install [Dataform CLI](https://cloud.google.com/dataform/docs/use-dataform-cli) (v3.0.8 or higher, it is recommended to install it globally)
+5. Authenticate with Google Cloud SDK using the following commands:
+   1. `gcloud auth login` (This will open a browser window to authenticate with your Google Account)
+   2. `gcloud config set project <PROJECT_ID>` (replace `<PROJECT_ID>` with your Google Cloud Project ID you created earlier)
+   3. `gcloud auth application-default login` (This sets up the application default credentials for your project)
+   4. `gcloud auth application-default set-quota-project <PROJECT_ID>` (This sets the quota project for your project)
+---
+
+### Dataform Project Setup
+1. Clone your dataform repository
+2. Navigate to your dataform repository
+   1. `cd <REPOSITORY_PATH>`
+3. Setup dataform authentication:
+   1. `dataform init-creds`
+   2. You will then be prompted to select your region, 1 for US, 2 for EU or 3 for Other, select the appropriate region
       - If you select 3, you will be prompted to enter the region, enter the region i.e. `australia-southeast1`
-    - You will then be prompted for ADC (default) or JSON Key (Service Account Keyfile), select the appropriate option
+   3. You will then be prompted for ADC (default) or JSON Key (Service Account Keyfile), select the appropriate option
       - If you select JSON Key, you will be prompted to enter the path to the JSON Keyfile
       - If you select ADC, you will be prompted to enter your Google Cloud Billing Project ID
-  - OR create a `.df-credentials.json` file in the root of the directory with the following content for ADC:
+   4. OR create a `.df-credentials.json` file in the root of the directory with the following content for ADC:
     ```json
     {
       "projectId": "<PROJECT_ID>",
       "location": "<REGION>",
     }
     ```
-- Clone your dataform repository
-- Navigate to your dataform repository
-  - `cd <REPOSITORY_PATH>`
-- Update your `workflow_settings.yaml` file with the appropriate settings for your project (Mandatory changes):
-  - Update the `defaultProject` variable with your created Google Cloud Project ID
-  - Update the `defaultLocation` variable with your region (i.e. `US`)
-  - Update the `INPUT_BUCKET_1` variable with your Google Cloud Storage Bucket name (i.e. `gs://<BUCKET_NAME>`)
-  - Update the `INPUT_BUCKET_2` variable with your Google Cloud Storage Bucket name (i.e. `gs://<BUCKET_NAME>`) (Required for seeding sample data)
-- Install dataform dependencies:
-  - `dataform install` (This will install the necessary dependencies for your dataform project)
-- Compile your dataform project:
-  - `dataform compile` (This will compile your dataform project, if there are no errors, you are good to go)
+4. Update your `workflow_settings.yaml` file with the appropriate settings for your project (Mandatory changes):
+   - Update the `defaultProject` variable with your created Google Cloud Project ID
+   - Update the `defaultLocation` variable with your region (i.e. `US`)
+   - Update the `INPUT_BUCKET_1` variable with your Google Cloud Storage Bucket name (i.e. `gs://<BUCKET_NAME>`)
+   - Update the `INPUT_BUCKET_2` variable with your Google Cloud Storage Bucket name (i.e. `gs://<BUCKET_NAME>`) (Required for seeding sample data)
+5. Install dataform dependencies:
+   - `dataform install` (This will install the necessary dependencies for your dataform project)
+6. Compile your dataform project:
+   - `dataform compile` (This will compile your dataform project, if there are no errors, you are good to go)
+---
 
 ### Seed Sample Data (Optional - For Testing Purposes)
 - Create a Google Cloud Storage Bucket - [Create a Bucket](https://cloud.google.com/storage/docs/creating-buckets) (This is where the sample data will be stored)
@@ -129,6 +137,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
 ```
 
 ## Nice to Have
+The following tools are recommended for improved code quality, debugging and provide additional features for an enhanced development experience:
 - [Dataform Tools - VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ashishalex.dataform-lsp-vscode)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [SQLFluff - Python Package](https://docs.sqlfluff.com/en/stable/gettingstarted.html)
@@ -138,3 +147,19 @@ This repository is licensed under the MIT License - see the [LICENSE](LICENSE) f
 
 ## Authors
 - [Benjamin Western](https://benjaminwestern.io)
+
+## TODO
+Below is a list of items that I plan to implement in the future to provide a more comprehensive testing ground for Dataform features:
+- [ ] Add `actions.yaml` for Dataform workflows
+  - [ ] Add `jupyter notebook` action
+  - [ ] Add `sql` file action
+- [ ] Add example for `inline JS` in a file JS `{}` - without needing to add to `common.js`
+- [ ] Add more BigQuery Config Examples (i.e. `partitionBy`, `clusterBy`, `expirationTime`, `labels`, `tags`, `policyTags`, etc.)
+- [ ] Add example for `JS` implementation of `.sqlx` action types
+  - [ ] `declare`
+  - [ ] `view`
+  - [ ] `table`
+  - [ ] `incremental`
+  - [ ] `operations`
+  - [ ] `tests`
+  - [ ] `assertions`

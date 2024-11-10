@@ -1,20 +1,21 @@
 config {
   type: "table", // Defined this as a table to show the discrepancy between view and table for dependencies
   schema: "outputs",
-  name: "all_posts",
+  name: "all_posts_table",
   tags: ["daily"],
   description: "Combine both questions and answers into a single posts_all table)",
   dependOnDependencyAssertions: true,
   dependencies: [{
       schema: "intermediate",
-      name: "v_answers"
+      name: "answers"
     },
     {
       schema: "intermediate",
-      name: "v_questions"
+      name: "questions"
     },
     {
-      name: "a_posts_count",
+      // This is an assertion dependency listed in `3_assertions/posts_count.sqlx`
+      name: "posts_count",
       // includeDependentAssertions: false -- adding this flag would make the dataform run fail
     }
   ],
@@ -42,7 +43,7 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("v_questions")}
+    ${ref("questions")}
 UNION ALL
 SELECT
     post_id,
@@ -53,4 +54,4 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("v_answers")}
+    ${ref("answers")}

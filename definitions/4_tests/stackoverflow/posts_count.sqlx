@@ -1,9 +1,11 @@
 config {
   type: "test",
-  dataset: {name: "all_posts", schema: "outputs"},
+  dataset: {name: "all_posts_table", schema: "outputs"},
 }
 
-input "v_questions" {
+-- Couldn't find a way to use schema and table name as input reference i.e. ${ref({schema: "intermediate", name: "questions"})}
+-- so, instead I am matching the table 'ref' exactly as in all_posts_table as they must be the same
+input "questions" {
   SELECT 73210679 AS post_id, '2022-08-02 16:16:31.810000 UTC' AS created_at, 'question' AS type, 'question_1' AS title, 'help_1' AS body, 11226740 AS owner_user_id, NULL AS parent_id UNION ALL
   SELECT 73284406 AS post_id, '2022-08-08 21:53:16.703000 UTC' AS created_at, 'question' AS type, 'question_2' AS title, 'help_2' AS body, 19123691 AS owner_user_id, NULL AS parent_id UNION ALL
   SELECT 73250763 AS post_id, '2022-08-05 13:43:25.850000 UTC' AS created_at, 'question' AS type, 'question_3' AS title, 'help_3' AS body, 17654458 AS owner_user_id, NULL AS parent_id UNION ALL
@@ -11,7 +13,7 @@ input "v_questions" {
   SELECT 73200968 AS post_id, '2022-08-02 01:00:36.200000 UTC' AS created_at, 'question' AS type, 'question_5' AS title, 'help_5' AS body, 19502695 AS owner_user_id, NULL AS parent_id
 }
 
-input "v_answers" {
+input "answers" {
   SELECT 73248720 AS post_id, '2022-08-05 11:02:18.823000 UTC' AS created_at, 'answer' AS type, CAST(NULL AS STRING) AS title, 'answer_1' AS body, 7410178 AS owner_user_id, 72830182 AS parent_id UNION ALL
   SELECT 73248721 AS post_id, '2022-08-05 11:02:21.603000 UTC' AS created_at, 'answer' AS type, CAST(NULL AS STRING) AS title, 'answer_2' AS body, 19595490 AS owner_user_id, 73248560 AS parent_id UNION ALL
   SELECT 73248723 AS post_id, '2022-08-05 11:02:25.203000 UTC' AS created_at, 'answer' AS type, CAST(NULL AS STRING) AS title, 'answer_3' AS body, 16786025 AS owner_user_id, 73248264 AS parent_id UNION ALL

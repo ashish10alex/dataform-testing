@@ -1,7 +1,7 @@
 config {
   type: "view",
   dataset: "intermediate",
-  name: "v_questions",
+  name: "questions",
   description: "Cleaned version of stackoverflow.posts_questions",
   dependencies: [{
     dataset: "stackoverflow",
@@ -19,7 +19,7 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("posts_questions")}
+    ${ref({schema: "stackoverflow", name: "posts_questions"})}
 WHERE
     creation_date >= TIMESTAMP('2019-01-01')
 LIMIT 100

@@ -1,7 +1,7 @@
 config {
     type: "operations",
-    schema: "extras",
-    name: "o_split_sample",
+    dataset: "sources",
+    name: "split_sample",
     hasOutput: true
 }
 

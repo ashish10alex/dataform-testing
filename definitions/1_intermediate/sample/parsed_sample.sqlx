@@ -1,20 +1,20 @@
 config {
     type: "view",
-    schema: "intermediate",
-    name: "v_parsed_sample",
+    dataset: "intermediate",
+    name: "parsed_sample",
     dependencies: [
         {
-            dataset: "extras",
-            name: "o_split_sample"
+            dataset: "sources",
+            name: "split_sample"
         }
     ]
 }
 
--- This view parses the JSON data from the o_split_sample operation
+-- This view parses the JSON data from the split_sample operation
 -- Then using LAX functions to handle NULL values and type casting to ensure the data is in the correct format
 -- This way you only need to change the query below if the schema of the JSON changes in the future
 WITH parsed as (
-    SELECT PARSE_JSON(data) as json_data FROM ${ref("o_split_sample")}
+    SELECT PARSE_JSON(data) as json_data FROM ${ref({schema: "sources", name: "split_sample"})}
 )
 
 SELECT

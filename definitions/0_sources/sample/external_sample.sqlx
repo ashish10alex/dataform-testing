@@ -1,7 +1,7 @@
 config {
     type: "operations",
-    schema: "extras",
-    name: "o_external_sample",
+    dataset: "sources",
+    name: "external_sample",
     hasOutput: true
 }
 

@@ -1,16 +1,16 @@
 config {
   type: "view",
   dataset: "outputs", // view needs dataset instead of schema
-  name: "v_all_posts",
+  name: "all_posts",
   tags: ["daily"],
   description: "Combine both questions and answers into a single posts_all table",
   dependencies: [{
       dataset: "intermediate",
-      name: "v_answers"
+      name: "answers"
     }, // view needs dataset instead of schema
     {
       dataset: "intermediate",
-      name: "v_questions"
+      name: "questions"
     }
   ],
   columns: {
@@ -37,7 +37,7 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("v_answers")}
+    ${ref({schema: "intermediate", name: "questions"})}    
 UNION ALL
 SELECT
     post_id,
@@ -48,4 +48,4 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    ${ref("v_questions")}
+    ${ref({schema: "intermediate", name: "answers"})}

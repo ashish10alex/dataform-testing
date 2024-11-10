@@ -1,7 +1,7 @@
 config {
   type: "view",
   dataset: "intermediate",
-  name: "v_badges",
+  name: "badges",
   description: "Cleaned version of stackoverflow.badges",
   dependencies: [{
     dataset: "stackoverflow",
@@ -16,7 +16,7 @@ SELECT
     date AS award_timestamp,
     user_id
 FROM
-    ${ref("badges")}
+    ${ref({schema: "stackoverflow", name: "badges"})}
 TABLESAMPLE SYSTEM (10 PERCENT)
 -- Where clause must be 'after' the TABLESAMPLE clause in BigQuery SQL
 LIMIT 100

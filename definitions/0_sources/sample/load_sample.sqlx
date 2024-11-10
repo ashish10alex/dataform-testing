@@ -1,7 +1,7 @@
 config {
     type: "operations",
-    schema: "extras",
-    name: "o_load_sample",
+    dataset: "sources",
+    name: "load_sample",
     hasOutput: true,
     disabled: true
 }
