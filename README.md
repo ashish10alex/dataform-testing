@@ -122,6 +122,7 @@ This repository provides a testing ground for Dataform features, including CLI, 
 ├── .vscode-dataform-tools  // VSCode Dataform extension tools
 │   └── .sqlfluff           // SQLFluff configuration for Dataform
 ├── definitions             // Dataform definitions
+│   ├── actions.yaml        // Action definitions
 │   ├── 0_sources           // Data sources (raw data)
 │   ├── 1_intermediate      // Intermediate/staging ("silver") tables
 │   ├── 2_outputs           // Output/final ("gold") tables
@@ -155,9 +156,7 @@ This repository is licensed under the MIT License - see the [LICENSE](LICENSE) f
 
 ## TODO
 Below is a list of items that I plan to implement in the future to provide a more comprehensive testing ground for Dataform features:
-- [ ] Add `actions.yaml` for Dataform workflows
-  - [ ] Add `jupyter notebook` action
-  - [ ] Add `sql` file action
+- [ ] Get `notebook` action in `actions.yaml` to actually create the notebook
 - [ ] Add more BigQuery Config Examples (i.e. `partitionBy`, `clusterBy`, `expirationTime`, `labels`, `tags`, `policyTags`, etc.)
 - [ ] Add example for `JS` implementation of `.sqlx` action types
   - [ ] `declare`
