@@ -6,13 +6,16 @@ config {
 }
 
 js {
-    const foo = 1;
+ const foo = 1;
+ function bar(number){
+     return number+1;
+ }
 }
 
 js { 
-    const bar = 2; 
+    const foobar = 1; 
 }
 
-SELECT ${foo} as one,
-       ${bar} as two,
+SELECT ${foobar} as one,
+       ${bar(foo)} as two,
        'three' as three
